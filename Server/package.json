@@ -1,0 +1,25 @@
+{
+  "name": "hisaab_kitaab",
+  "version": "1.0.0",
+  "description": "A demo application with no idea what i am going to do",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dearfog/Hisaab_Kitaab.git"
+  },
+  "author": "Nasiruddin Saiyed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dearfog/Hisaab_Kitaab/issues"
+  },
+  "homepage": "https://github.com/dearfog/Hisaab_Kitaab#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.0",
+    "restify": "^6.0.1"
+  }
+}
