@@ -19,7 +19,13 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "assets/vendor/bootstrap/css/bootstrap.min.css",
+        "assets/css/fontastic.css",
+        "assets/vendor/font-awesome/css/font-awesome.min.css",
+        "assets/poppins.css",
+        "assets/css/custom.css",
+        "assets/css/customTheme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -55,6 +61,8 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {}
+    "component": {
+      "viewEncapsulation": "Emulated"
+    }
   }
 }

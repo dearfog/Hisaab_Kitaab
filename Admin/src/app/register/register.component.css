@@ -1,0 +1,29 @@
+.loginForm {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    color: rgba(47, 51, 62, 0.7);
+  }
+ 
+  button.mat-button {
+    background: rgba(47, 51, 62, 0.7);
+    color: #fff;
+  }
+  .loginForm > * {
+    width: 100%;
+  }
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  .mat-input-focused label {
+    color: rgba(47, 51, 62, 0.7);
+  }
