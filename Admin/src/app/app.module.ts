@@ -9,7 +9,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from "./material.module";
 // import { RegisterComponent } from './register/register.component';
-
+ import { HttpModule } from "@angular/http";
+import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
   {
     path: 'todo',
@@ -18,6 +19,10 @@ const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'register',
@@ -36,14 +41,16 @@ const appRoutes: Routes = [
     AppComponent,
     TodoComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   bootstrap: [AppComponent]
 })

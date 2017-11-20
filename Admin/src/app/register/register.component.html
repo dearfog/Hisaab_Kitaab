@@ -15,35 +15,35 @@
         <div class="col-lg-6 bg-white">
           <div class="form d-flex align-items-center">
             <div class="content">
-              <form class="loginForm"  id="login-form">
+              <form class="registerForm"  id="login-form">
                 <mat-form-field class="example-full-width" >
-                  <input matInput placeholder="First Name" [formControl]="fnameFormControl">
-                  <mat-error *ngIf="fnameFormControl.hasError('required')">
+                  <input matInput placeholder="First Name" [formControl]="registerForm.controls['fname']">
+                  <mat-error *ngIf="registerForm.controls['fname'].hasError('required')">
                     First name is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width" >
-                  <input matInput placeholder="Last name" [formControl]="lnameFormControl">
-                  <mat-error *ngIf="lnameFormControl.hasError('required')">
+                  <input matInput placeholder="Last name" [formControl]="registerForm.controls['lname']">
+                  <mat-error *ngIf="registerForm.controls['lname'].hasError('required')">
                     Last name is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width" >
-                  <input matInput placeholder="Username" [formControl]="usernameFormControl">
-                  <mat-error *ngIf="usernameFormControl.hasError('required')">
+                  <input matInput placeholder="Username" [formControl]="registerForm.controls['username']">
+                  <mat-error *ngIf="registerForm.controls['username'].hasError('required')">
                     Username is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width" >
-                  <input matInput placeholder="Password" [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'">
+                  <input matInput placeholder="Password" [formControl]="registerForm.controls['password']" [type]="hide ? 'password' : 'text'">
                   <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-                  <mat-error *ngIf="passwordFormControl.hasError('required')">
+                  <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
                     Password is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
               </form>
-              <button mat-button padding [disabled]="buttonHide">Register</button>
-              <a>or</a>
+              <button mat-button padding [disabled]="!registerForm.valid" (click)='register()'>Register</button>
+              <a class="col-sm-1">or</a>
               <button mat-button padding routerLink="/login"> Login</button>
             </div>
           </div>
@@ -52,3 +52,30 @@
     </div>
   </div>
 </div>
+<!-- <form class="loginForm"  id="login-form">
+  <mat-form-field class="example-full-width" >
+    <input matInput placeholder="First Name" [formControl]="fnameFormControl">
+    <mat-error *ngIf="fnameFormControl.hasError('required')">
+      First name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" >
+    <input matInput placeholder="Last name" [formControl]="lnameFormControl">
+    <mat-error *ngIf="lnameFormControl.hasError('required')">
+      Last name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" >
+    <input matInput placeholder="Username" [formControl]="usernameFormControl">
+    <mat-error *ngIf="usernameFormControl.hasError('required')">
+      Username is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" >
+    <input matInput placeholder="Password" [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    <mat-error *ngIf="passwordFormControl.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form> -->

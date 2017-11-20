@@ -17,21 +17,21 @@
             <div class="content">
               <form class="loginForm"  id="login-form">
                 <mat-form-field class="example-full-width" [color]="warn" >
-                  <input matInput placeholder="Username" [formControl]="usernameFormControl">
-                  <mat-error *ngIf="usernameFormControl.hasError('required')">
+                  <input matInput placeholder="Username" [formControl]="loginForm.controls['username']" name="username">
+                  <mat-error *ngIf="loginForm.controls['username'].hasError('required')">
                     Username is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width" >
-                  <input matInput placeholder="Password" [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'">
+                  <input matInput placeholder="Password" [formControl]="loginForm.controls['password']" name="password" [type]="hide ? 'password' : 'text'">
                   <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-                  <mat-error *ngIf="passwordFormControl.hasError('required')">
+                  <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
                     Password is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
               </form>
-              <button mat-button padding >Login</button>
-              <a>or</a>
+              <button mat-button [disabled]="!loginForm.valid" (click)="login()" padding >Login</button>
+              <a class="col-sm-1">or</a>
               <button mat-button padding routerLink="/register">Register</button>
             </div>
           </div>
